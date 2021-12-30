@@ -1,0 +1,207 @@
+$detail: #fff;
+$primary:#0277BD;
+
+.menu{
+  width: 60px;
+  min-height: 100vh;
+  overflow: hidden;
+  background: $primary;
+  display: flex;
+  flex-direction: column;
+  align-items:flex-end;
+  justify-content: flex-start;
+  box-shadow: 5px 0 0 $detail,
+              8px 0 0 $primary;
+  transition: .5s;
+  .toggle{
+    width: 50px;
+    height: 40px;
+    margin: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 5px;
+    cursor: pointer;
+    overflow: hidden;
+    transition: .5s;
+    span{
+      min-width: 40px;
+      min-height: 5px;
+      margin: 2.5px;
+      display: block;
+      background: $detail;
+      border-radius: 5px;
+      transition: .5s;
+    }
+    span:nth-child(1){
+      transform: scale(.5) rotate(45deg) translateY(-5px) translateX(16px);
+    }
+    span:nth-child(2){
+      transform: translateX(70px);
+    }
+    span:nth-child(3){
+      transform: scale(.5) rotate(-45deg)translateY(5px)  translateX(16px);
+    }
+  }
+  .component{
+    height: 50px;
+    width: 97%;
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    background: #ffffff25;
+    margin: 5px 0;
+    padding-left: 15px;
+    position: relative;
+    cursor: pointer;
+    .menu-content{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: $detail;
+      margin-right: 20px;
+      .icon{
+        margin-right: 5px ;
+      }
+      .menu-name{
+        display: none;
+      }
+    }
+  }
+  .active{
+    background: $detail;
+    .menu-content{
+      color: $primary;
+    }
+
+  }
+  .active:before{
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: transparent;
+    top: -20px;
+    right: 0;
+    border-bottom-right-radius: 100%;
+    box-shadow: 10px 10px 0 5px $detail;
+    overflow: hidden;
+  }
+  .active:after{;
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: transparent;
+    bottom: -20px;
+    right: 0;
+    border-top-right-radius: 100%;
+    box-shadow: 10px -10px 0 5px $detail;
+    z-index: 999;
+  }
+   .toggle-config{
+     color: $detail;
+      width: 50px;
+      height: 40px;
+      margin: 5px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 5px;
+      cursor: pointer;
+      overflow: hidden;
+      transition: .5s;
+    }
+
+  .open-toggle{
+    span:nth-child(1){
+      transform: translateY(10px) rotate(45deg);
+    }span:nth-child(2){
+      transform: translateX(70px);
+    }span:nth-child(3){
+      transform: translateY(-10px) rotate(-45deg);
+    }
+  }
+
+    .inative{
+      display: none;
+    }
+
+}
+.open-menu{
+  width: 350px;
+  padding-left: 25px;
+  .icon{
+    margin-right: 10px ;
+  }
+  .menu-name{
+    display: inline-block!important;
+  }
+}
+ @keyframes downModal {
+   0%{
+     transform: translateY(-5px);
+   }
+   100%{
+     transform: translateY(0px);
+   }
+ }
+
+
+ //active
+
+.toggle-minimal{
+  background: $primary;
+  width: 50px;
+  height: 40px;
+  margin: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border-radius: 5px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: .5s;
+  span{
+    min-width: 40px!important;
+    min-height: 5px!important;
+    margin: 2.5px;
+    display: block;
+    background: $detail;
+    border-radius: 5px;
+    transition: .5s;
+  }
+  span:nth-child(1){
+    min-width: 40px!important;
+    transform: translateX(0) translateY(10px) rotate(45deg);
+  }
+  span:nth-child(2){
+    min-width: 40px!important;
+    transform: translateX(60px);
+  }
+  span:nth-child(3){
+    min-width: 40px!important;
+    transform: translateX(0) translateY(-10px) rotate(-45deg);
+  }
+}
+
+
+//drag-drop
+
+.cdk-drag-preview {
+display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 20px;
+  background: $detail;
+  color: $primary;
+  border-radius: 25px;
+}
+.cdk-drag-placeholder {
+  opacity: 0;
+}
+

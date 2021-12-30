@@ -1,0 +1,14 @@
+<div (mouseenter)="toggle()" (mouseleave)="toggle()" cdkDropList class="menu" id="menu" (cdkDropListDropped)="drop($event)">
+  <div class="component"  (mouseenter)="setEfect(menu.id)" *ngFor="let menu of menus" id="{{menu.id}}"
+       cdkDrag>
+    <div class="menu-content">
+      <mat-icon class="icon" svgIcon="{{menu.icon}}"></mat-icon>
+      <span class="menu-name">{{menu.name}}</span>
+    </div>
+  </div>
+  <div class="config">
+    <div class="toggle-config">
+      <mat-icon svgIcon="cog"></mat-icon>
+    </div>
+  </div>
+</div>
