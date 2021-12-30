@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {CdkDragDrop, moveItemInArray} from "@angular/cdk/drag-drop";
 
 @Component({
@@ -12,6 +12,7 @@ export class MenudoisComponent implements OnInit {
     moveItemInArray(this.menus, event.previousIndex, event.currentIndex);
 
   }
+
   constructor() {
   }
 
@@ -39,6 +40,14 @@ export class MenudoisComponent implements OnInit {
     document.querySelectorAll('.component').forEach(item => {
       item.classList.remove('active')
     })
+  }
+
+  configure() {
+    // @ts-ignore
+    document.getElementById('menu').classList.toggle('open-menu-conf')
+    // @ts-ignore
+    document.getElementById('configuration').classList.toggle('configuration-open')
+
   }
 
   menus = [

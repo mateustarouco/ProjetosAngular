@@ -4,6 +4,7 @@ import {ToggleComponent} from "./toggle/toggle.component";
 import {MenuComponent} from "./menu/menu.component";
 import {HomeComponent} from "./home/home.component";
 import {MenudoisComponent} from "./menudois/menudois.component";
+import {CheckboxComponent} from "./checkbox/checkbox.component";
 
 
 const routes: Routes = [
@@ -23,6 +24,10 @@ const routes: Routes = [
   {
   path:'menu2',
     component: MenudoisComponent
+  },
+  {
+  path:'chackbox',
+    component: CheckboxComponent
   }
 ];
 

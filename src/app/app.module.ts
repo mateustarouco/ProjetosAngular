@@ -12,6 +12,8 @@ import {DragDropModule} from '@angular/cdk/drag-drop';
 import {MatIconModule} from "@angular/material/icon";
 import {HttpClientModule} from "@angular/common/http";
 import { MenudoisComponent } from './menudois/menudois.component';
+import { CheckboxComponent } from './checkbox/checkbox.component';
+import {MatButtonModule} from "@angular/material/button";
 
 
 @NgModule({
@@ -20,17 +22,19 @@ import { MenudoisComponent } from './menudois/menudois.component';
     MenuComponent,
     ToggleComponent,
     HomeComponent,
-    MenudoisComponent
+    MenudoisComponent,
+    CheckboxComponent
   ],
-  imports: [
-    BrowserModule,
-    RouterModule,
-    DragDropModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    HttpClientModule,
-    MatIconModule
-  ],
+    imports: [
+        BrowserModule,
+        RouterModule,
+        DragDropModule,
+        AppRoutingModule,
+        BrowserAnimationsModule,
+        HttpClientModule,
+        MatIconModule,
+        MatButtonModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })
