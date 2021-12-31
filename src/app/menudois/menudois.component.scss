@@ -10,8 +10,6 @@ $primary: #0277BD;
   flex-direction: column;
   align-items: flex-end;
   justify-content: flex-start;
-  box-shadow: 5px 0 0 $detail,
-  8px 0 0 $primary;
   transition: .5s;
 
   .component {
@@ -36,11 +34,14 @@ $primary: #0277BD;
       margin-right: 20px;
 
       .icon {
+        min-width: 25px;
+        height: 25px!important;
         margin-right: 5px;
       }
 
       .menu-name {
-        display: none;
+        opacity: 0;
+        transform: translateX(150px);
       }
     }
   }
@@ -106,7 +107,9 @@ $primary: #0277BD;
   }
 
   .menu-name {
-    display: inline-block !important;
+    transition: .5s;
+    opacity: 1!important;
+    transform: translateX(0)!important;
   }
 }
 
@@ -115,6 +118,7 @@ $primary: #0277BD;
 }
 
 .configuration-open {
+  transition: 5s;
   display: flex;
   position: fixed;
   right: 0;
@@ -135,6 +139,41 @@ $primary: #0277BD;
         height: 35%;
         background: #ffffff25;
         border-radius: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .theme{
+          position: relative;
+          input{
+            display: none;
+          }
+          span{
+            display: block;
+            width: 100px;
+            height: 50px;
+            background: #21212150;
+            box-shadow: inset 2px 2px 2px #21212110,
+            inset 5px 5px 5px #21212110,
+            inset -2px -2px 2px #d1d1d110,
+            inset -5px -5px 5px #d1d1d110;
+            border-radius: 25px;
+          }
+          i{
+            position: absolute;
+            top: 5px;
+            left: 5px;
+            width: 40px;
+            height: 40px;
+            transition: .5s;
+            border-radius: 50%;
+            background: #212121;
+            box-shadow: 2px 2px 2px #21212150;
+          }
+          input:checked ~ i{
+            background: #d1d1d1;
+            transform: translateX(50px);
+          }
+        }
       }
 
       .config-left {
@@ -142,6 +181,24 @@ $primary: #0277BD;
         background: #ffffff25;
         border-radius: 5px;
         padding-bottom:0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        .options{
+          height: 80%;
+          width: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          .op-1,.op-2{
+            margin: 5px;
+            border-radius: 5px;
+            width: 40%;
+            height: 100%;
+            background: #0277BD;
+          }
+        }
       }
 
       .config-right {
@@ -177,12 +234,15 @@ $primary: #0277BD;
   transition-delay: .2s;
 
   .icon {
+    width: 40px!important;
     margin-right: 10px;
     font-size: 1rem !important;
   }
 
   .menu-name {
-    display: inline-block !important;
+    transition: .5s;
+    opacity: 1!important;
+    transform: translateX(0)!important;
   }
 }
 

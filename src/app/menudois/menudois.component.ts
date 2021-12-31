@@ -10,7 +10,6 @@ export class MenudoisComponent implements OnInit {
 
   drop(event: CdkDragDrop<string[]>) {
     moveItemInArray(this.menus, event.previousIndex, event.currentIndex);
-
   }
 
   constructor() {
@@ -36,7 +35,6 @@ export class MenudoisComponent implements OnInit {
   toggle() {
     // @ts-ignore
     document.getElementById('menu').classList.toggle('open-menu')
-
     document.querySelectorAll('.component').forEach(item => {
       item.classList.remove('active')
     })
@@ -122,5 +120,4 @@ export class MenudoisComponent implements OnInit {
       id: 15
     }
   ]
-
 }

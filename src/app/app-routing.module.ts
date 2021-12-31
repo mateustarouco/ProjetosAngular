@@ -18,14 +18,6 @@ const routes: Routes = [
     component: ToggleComponent,
   },
   {
-  path:'menu',
-    component: MenuComponent
-  },
-  {
-  path:'menu2',
-    component: MenudoisComponent
-  },
-  {
   path:'chackbox',
     component: CheckboxComponent
   }
